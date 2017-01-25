@@ -1,0 +1,293 @@
+﻿/*base: --------------------------------------------- */
+@import "base/base.css";
+/*fuentes: ------------------------------------------ */
+@import "fuentes/fonts.css";
+/*pag: ---------------------------------------------- */
+@import "pag/registrar_personal.css";
+@import "pag/consulta_alumno.css";
+
+
+	/*-------- Colores ---------
+	 * Verde		    : #7ea030;
+	 * Gris	Oscuro	: #2e2e2e;
+	 * Gris Claro	  : #4a4a4a;
+	 * Azul			    : #00548c;
+	 * Gris Claro	: #4a4a4a;
+	 * Azul			: #00548c;
+	 *
+	 *
+	 */
+
+
+
+/*Estilos principales: -------------------------------*/
+#div_contenedor_principal {
+	width: 1024px;
+	height: auto;
+	margin: 0 auto; /* Centrado vertical */
+}
+
+
+#div_cabecera {
+	min-width: 1024px;
+	width: 100%;
+	height: 120px;
+	background-color: #2e2e2e;
+}
+
+
+#div_cabecera_central {
+	position:absolute;
+	margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 1024px;
+}
+
+
+
+#div_img_logo {
+	height: 120px;
+	width: 120px;
+	float: left; /*siguiente div a la izquierda */
+
+	/* Centrado de imagen: */
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+#div_menu_navegacion {
+	width: 100%;
+	height: 40px;
+	background-color: #7ea030;
+	display: flex;
+	justify-content: center;
+}
+
+
+#div_menu_navegacion_central {
+	position:absolute;
+	margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 1024px;
+}
+
+#div_span_titulo {
+	float: left;
+}
+
+
+#div_menu_navegacion ul li {
+	text-decoration: none; /* Elimina el subrayado de los links */
+	list-style: none; /* Eliminación de los puntos de la lista por default */
+	display: inline-block; /* Lista en horizontal */
+	padding: 0px 25px 0px 25px; /* Espaciado entre palabras*/
+	font-family: muli_regular;
+	color: #FFFFFF; /* Color de letra */
+	float: left; /* Botones juntos */
+	background-color: #7ea030;
+	height: 40px; /* Altura de boton*/
+	line-height: 40px; /* Centrado verticalmente */
+
+}
+
+#div_menu_navegacion ul li:hover {
+	background-color: #4A4A4A;
+	transition-duration: 0.5s;
+}
+
+#div_login {
+	width: 1024px;
+	height: 472px;
+	background-color: #2e2e2e;
+}
+
+#div_cuerpo {
+	width: auto;
+	height: auto;
+	background-color: #2e2e2e;
+	font-family: caudex_bold, caudex_regular;
+	color: #fff;
+	font-size: 22px;
+	padding: 40px;
+	border-radius: 15px;
+}
+
+#div_cuerpo h1{
+	font-size: 25px;
+	padding: 5px;
+	text-transform: uppercase;
+	line-height: 0px;
+}
+
+#div_frm_login {
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	background-color: #004a70;
+	padding: 30px;
+	margin: 50px;
+	margin-left: 332px;
+	border-radius: 15px;
+
+}
+
+#div_frm_registrar {
+	height: auto;
+	width: auto;
+	background-color: #004a70;
+	padding: 30px;
+	margin: 50px 0px 50px 0px;
+	border-radius: 15px;
+	line-height: 40px;
+}
+
+
+#div_pie_pagina {
+	font-family: caudex_bold, caudex_regular;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 100%;
+	height: 30px;
+	background-color: #2E2E2E;
+	padding: 30px;
+	border-top:#4A4A4A 3px solid;
+}
+
+
+#div_pie_pagina_central {
+	position: absolute;
+	margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 1024px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#div_registro_correcto {
+	color: #0b7402;
+	padding: 35px 20px 35px 20px;
+	background-color: #b9fdb3;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#div_registro_incorrecto {
+	color: #740202;
+	background-color: #fdbab3;
+	padding: 35px 20px 35px 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+
+
+
+#span_titulo {
+	color: #FFF;
+	font-family: caudex_bold, caudex_regular;
+	font-size: 32px;
+	margin: 20px 0px 0px 30px ;
+	position: absolute;
+	text-transform: uppercase;
+
+}
+
+#span_subtitulo {
+	color: #7EA030;
+	font-family: caudex_bold, caudex_regular;
+	font-size: 16px;
+	margin: 50px 0px 0px 30px ;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+
+#img_logo {
+	height: 100px;
+	width: 100px;
+	padding:10px;
+}
+
+#div_frm_buscar {
+	padding-top: 1rem;
+}
+
+.label_frm {
+	color: #fff;
+	font-family: muli_regular;
+	font-size: 18px;
+	position: relative;
+}
+
+.label_asterisco{
+	color: #fff;
+	font-family: muli_regular;
+	font-size: 14px;
+	position: relative;
+}
+
+.input_frm {
+	width: auto;
+	height: 30px;
+	font-family: muli_regular;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 10px;
+	text-transform: uppercase;
+	border: 0px;
+}
+.input_frm_correo {
+	width: auto;
+	height: 30px;
+	font-family: muli_regular;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 10px;
+	border: 0px;
+}
+.input_file_frm {
+	width: auto;
+	height: 30px;
+	font-family: muli_regular;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+
+.input_frm_login {
+	width: 300px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 10px;
+	text-transform: uppercase;
+	border: 0px;
+}
+
+.btn_frm_aceptar {
+	width: 300px;
+	height: 40px;
+	font-family: muli_bold;
+	font-size: 20px;
+	border-radius: 5px;
+	border: none;
+	color: #FFF;
+	background-color: #232323;
+}
+
+.btn_frm_aceptar:hover {
+	background-color: #4A4A4A;
+	transition-duration: 0.5s;
+}
+
+.espacio_horizontal_30px {
+	border:0px solid red;
+	padding: 0px 16px 0px 16px;
+	border: 0px solid red;
+}

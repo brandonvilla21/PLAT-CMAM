@@ -1,0 +1,26 @@
+#div_contenedor_formulario{
+  display: flex;
+}
+
+#div_labels{
+  display        : flex;
+  flex-direction : column;
+}
+
+#div_boxes{
+  display         : flex;
+  flex-direction  : column;
+  justify-content : space-between;
+  padding-left    : 1rem;
+  width           : 50%;
+}
+
+#id_personal {
+  width: 150px;
+}
+
+#div_btn_frm_aceptar{
+  padding-top     : 20px;
+  display         : flex;
+  justify-content : flex-start;
+}

@@ -1,0 +1,28 @@
+#encontrado_h2 {
+  font-family: muli_regular, sans-serif;;
+  padding-bottom: .3rem;
+}
+#div_encontrado {
+  font-family: muli_regular, sans-serif;;
+  display: flex;
+  padding-top: .5rem;
+  justify-content: space-between;
+}
+
+#div_foto {
+  display: flex;
+  align-items: center;
+}
+
+#div_foto img {
+  width: 18rem;
+}
+#div_no_encontrado {
+  display: flex;
+  justify-content: center;
+  font-family: muli_regular, sans-serif;
+}
+
+.dato_alumno_nombre, .dato_personal_nombre {
+  font-weight: bold;
+}
