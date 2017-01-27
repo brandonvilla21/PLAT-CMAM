@@ -420,7 +420,7 @@
 
 	    <?php } else { ?>
 					<div id="div_no_encontrado">
-						<h2>No se encontro al alumno</h2>
+						<h2 class="input_frm">No se encontró al alumno</h2>
 					</div>
 	    <?php  }?>
 </div>

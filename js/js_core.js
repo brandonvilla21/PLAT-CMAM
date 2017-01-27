@@ -129,6 +129,16 @@ function modificaAlumno() {
 
 }
 
+function modificaPersonal() {
+	//Obtiene el id del alumno y lo almacena en una variable
+	var id_personal = document.getElementById("id_personal").value;
+	//Llama al archivo consulta_alumno.php pasando como parametro el id del alumno
+	$("#div_resultado").load("../../php/querys/modifica_personal.php",{
+		'id_personal': id_personal
+	});
+
+}
+
 function getIdPersonal() {
 	var datas;
 	$.ajax({
