@@ -242,6 +242,7 @@
 	text-transform: uppercase;
 	border: 0px;
 }
+
 .input_frm_correo {
 	width: auto;
 	height: 30px;
@@ -251,6 +252,7 @@
 	padding-left: 10px;
 	border: 0px;
 }
+
 .input_file_frm {
 	width: auto;
 	height: 30px;
@@ -285,6 +287,27 @@
 	background-color: #4A4A4A;
 	transition-duration: 0.5s;
 }
+
+
+.btn_aceptar {
+	width: 300px;
+	height: 40px;
+	font-family: muli_bold;
+	font-size: 20px;
+	border-radius: 5px;
+	border: none;
+	color: #FFF;
+	background-color: #232323;
+	padding: 10px 30px 10px 30px;
+}
+
+.btn_aceptar:hover {
+	background-color: #4A4A4A;
+	transition-duration: 0.5s;
+}
+
+
+
 
 .espacio_horizontal_30px {
 	border:0px solid red;
