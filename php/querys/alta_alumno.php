@@ -189,10 +189,11 @@
 	//Se ejecuta el query:
 	$resultado = mysqli_query($conexion, $query)
 
+	or die(mysqli_error());
 	//Si falla (or die), redirecciona a la pagina de fallo.
-	or die (header('Location: ../../html/pag/alumno_registro_incorrecto.php'));
+	//or die (header('Location: ../../html/pag/alumno_registro_incorrecto.php'));
 
 	//Si no falla, redirecciona a la pagina de registro correcto.
-	header('Location: ../../html/pag/alumno_registro_correcto.php');
+	//header('Location: ../../html/pag/alumno_registro_correcto.php');
 
 ?>
