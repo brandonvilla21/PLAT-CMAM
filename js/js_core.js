@@ -41,30 +41,6 @@ function setReadOnly(id_elemento, valor){
 	$("#"+id_elemento).prop('readonly', valor);
 }
 
-function generarNumeroControlAlumno(nivel, grupo){
-
-
-	//Año:
-	var fecha = new Date();
-	var ano =  fecha.getFullYear().toString();
-
-	//Forma del numero de control: [TIPO DE USUARIO] + [NIVEL] + [GRUPO] + [AÑO] + [NUMERO DE ALUMNO].
-	numero_control = "A" + nivel + grupo + ano.charAt(2) + ano.charAt(3) + "000";
-
-
-
-	/* ****************************
-	 *
-	 *	FALTA REALIZAR UN METODOS DONDE "000" SEA EL ULTIMO VALOR ENCONTRADO NO REPETIDO EN LA BASE DE DATOS.
-	 *
-	 */
-
-	setReadOnly('id_alumno', true);
-
-	//return numero_control;
-	$("#id_alumno").prop('value', numero_control);
-}
-
 
 
 function introducirNumeroControlAlumno(id_elemento){
@@ -73,6 +49,29 @@ function introducirNumeroControlAlumno(id_elemento){
 }
 
 
+
+function generarNumeroControlAlumno(nivel, grupo, int_total_alumnos){
+
+	string_total_alumnos = int_total_alumnos.toString();
+	//alert("Longitud de nuemro  " + string_total_alumnos.length);
+	// //Año:
+	var fecha = new Date();
+	var ano =  fecha.getFullYear().toString();
+
+
+	while (string_total_alumnos.length<3){
+    string_total_alumnos = '0' + string_total_alumnos;
+	}
+
+	//alert("Numero de alumnos acompletados: " + string_total_alumnos);
+	//Forma del numero de control: [TIPO DE USUARIO] + [NIVEL] + [GRUPO] + [AÑO] + [NUMERO DE ALUMNO].
+	numero_control = "A" + nivel + grupo + ano.charAt(2) + ano.charAt(3) + string_total_alumnos;
+
+	setReadOnly('id_alumno', true);
+
+
+	$("#id_alumno").prop('value', numero_control);
+}
 
 
 function generarCurp(apellido_paterno, apellido_materno, nombre, fecha_nacimiento, sexo, id_elemento){

@@ -82,9 +82,24 @@
 						<label class="label_frm" onclick="" />* Confirmar contraseña:</label>
 						<input id="confirmar_contrasena" class="input_frm"  type="password"  maxlength="30" name="confirmar_contrasena" style="width: 220px;" required>
 						<br /><br />
-						<input name="btn_generar_numero_control" class="btn_frm_aceptar" type="button" value="Generar número de control" onclick="generarNumeroControlAlumno(document.getElementById('nivel').value, document.getElementById('grupo').value)">
-						<input name="btn_introducir_numero_control" class="btn_frm_aceptar" type="button" value="Introducir número de control" onclick="introducirNumeroControlAlumno(document.getElementById('id_alumno').value)">
+
+						<?php
+							//Consultar total de alumnos:
+							$query = "SELECT COUNT(*) AS total_alumnos FROM tbl_alumno;";
+							$result = mysqli_query($conexion, $query);
+							$row = mysqli_fetch_object($result);
+							$count_tbl_alumnos = $row->total_alumnos + 1;
+						?>
+
+						<input name="btn_generar_numero_control" class="btn_frm_aceptar" type="button" value="Generar número de control"
+						onclick="generarNumeroControlAlumno(document.getElementById('nivel').value, document.getElementById('grupo').value, <?php echo $count_tbl_alumnos ?>)">
+
+						<input name="btn_introducir_numero_control" class="btn_frm_aceptar" type="button" value="Introducir número de control"
+						onclick="introducirNumeroControlAlumno(document.getElementById('id_alumno').value)">
 						<br /><br />
+
+
+
 
 
 						<!-- DATOS PRINCIPALES ----------------------------------------------------->

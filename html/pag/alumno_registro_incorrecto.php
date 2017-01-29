@@ -40,11 +40,20 @@
 
 				<div id="div_registro_incorrecto">
 					<img src="../../img/uncheck.png" align="middle">
+					<br>
 
 					Ocurrió un error al registrar el alumno.
+					<br>
 
+					Detalle de error:
+					<?php echo $_GET['error']; ?>
+
+					<br><br>
+					<a href="javascript:window.history.back();" class="btn_aceptar" > Regresar </a>
+
+					
 				</div>
-
+				
 
 			</div> <!-- div_cuerpo -->
 
