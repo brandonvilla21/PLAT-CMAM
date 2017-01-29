@@ -42,7 +42,7 @@
 				<h1>Registrar alumno:</h1>
 
 				<div id="div_frm_registrar">
-					<form  method="post" action="../../php/querys/alta_alumno.php" name="frm_registrar_alumno">
+					<form  method="post" action="../../php/querys/alta_alumno.php" name="frm_registrar_alumno" enctype="multipart/form-data">
 
 
 						<!-- DATOS DE NUEVO INGRESO ----------------------------------------------------->
@@ -236,8 +236,8 @@
 							<option value="O">Otro</option>
 						</select>
 						<br />
-						<label class="label_frm">Foto: </label>
-						<input type="file" name="foto" class="input_file_frm" id="foto" accept=".png, .jpeg, .jpg" style="color:#FFF">
+						<label class="label_frm">Foto (MAX: 500 kbs): </label>
+  					<input id="imagen" name="imagen" size="30" type="file" accept=".png, .jpeg, .jpg"/>
 						<br />
 						<label class="label_frm">Alergias (descripción): </label>
 						<br />
