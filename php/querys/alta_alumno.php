@@ -135,7 +135,7 @@
 		'$horas_arresto',
 		'$puntos_demerito',
 		'$fecha_ingreso',
-	  '$fecha_nacimiento',
+	    '$fecha_nacimiento',
 		'$curp',
 		'$calle',
 		'$colonia',
@@ -146,9 +146,9 @@
 		'$numero_celular',
 		'$email',
 		'$estatura',
-	  '$peso',
-	  '$nacionalidad',
-	  '$religion',
+	    '$peso',
+	    '$nacionalidad',
+	    '$religion',
 		'$alergia',
 		'$tipo_sangre',
 		'$estatus',
@@ -187,13 +187,34 @@
 
 
 	//Se ejecuta el query:
-	$resultado = mysqli_query($conexion, $query)
+	$resultado = mysqli_query($conexion, $query);
 
-	or die(mysqli_error());
-	//Si falla (or die), redirecciona a la pagina de fallo.
-	//or die (header('Location: ../../html/pag/alumno_registro_incorrecto.php'));
+	//Se verifica el estado de la última consulta:
+	$status = mysqli_sqlstate ($conexion);
 
-	//Si no falla, redirecciona a la pagina de registro correcto.
-	//header('Location: ../../html/pag/alumno_registro_correcto.php');
+	//echo "Estado: " . $status; //Ver codigo de status que devuelve.
+
+	//Código de status: 00000: La ultima consulta fué realizada con exito.
+	if($status == '00000'){
+		//echo '<br>' . "El usuario fué registrado correctamente.";
+		header('Location: ../../html/pag/alumno_registro_correcto.php');
+	} 
+
+	//Código de status: 23000: Se está duplicando un campo llave al ejecutar la query.
+	else if($status == '23000'){
+		//echo '<br>' . "El numero de usuario ya está registrado";
+		$error = "Este número de control es posible que ya exista.";
+		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error);
+
+	} 
+	else {
+		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$staus);
+	}
+
+
+
+	//Más información acerca de los códigos de staus en:
+	//http://php.net/manual/es/mysqli.sqlstate.php
+	
 
 ?>
