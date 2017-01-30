@@ -4,14 +4,21 @@
   /*Seleciona la base de datos a utilizar*/
   mysqli_select_db($conexion, $base_de_datos)
     or die("Ha fallado la conexion con la base de datos");
-
-  $query = "SELECT COUNT(id_personal) AS 'contador' FROM tbl_personal";
+  $id_alumno = $_GET['id_alumno'];
+  //$query = "SELECT COUNT(id_personal) AS 'contador' FROM tbl_personal";
+  $query = "SELECT * FROM tbl_alumno WHERE id_alumno ='$id_alumno'";
 
   $result = mysqli_query($conexion, $query);
 
   $row = mysqli_fetch_array($result);
-	$contador = $row['contador'];
+	$id = $row['id_alumno'];
+  $nombre = $row['nombre'];
+  echo $nombre;
+  echo $id;
+
   $datos = array(
-    'contador' => $row['contador'];
+    "nombre" => $nombre,
+    "id" => $id
   );
-  json_encode($datos);
+  $json =  json_encode($datos);
+  echo $json;

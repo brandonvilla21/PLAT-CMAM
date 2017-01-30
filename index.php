@@ -4,7 +4,7 @@
 	//Inclusión de archivos php
 	include ("php/conexion_db_cmam.php");
 ?>
-<!--QA-->
+
 <html lang="es" >
 
 	<head>

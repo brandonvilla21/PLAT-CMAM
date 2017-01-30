@@ -141,13 +141,13 @@ function modificaPersonal() {
 function getIdPersonal() {
 	var datas;
 	$.ajax({
-		type		: "POST",
+		type		: "GET",
 		url 		: "../../php/querys/consulta_id_personal.php",
-		data		: datas,
-		dataType: 'json',
-		success : function(datos) {
-			alert(datos[0] + "l");
-			console.log(result);
+		data		: {
+			'id_alumno' : 'AS0117000'
+		},
+		success : function(response) {
+			alert(response);//De esta manera imprime todo lo que este en echo
 		},
 		error   : function(xhr, ajaxOptions, thrownError) {
 			alert("Error: "+ xhr.status);

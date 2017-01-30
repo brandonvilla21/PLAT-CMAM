@@ -85,9 +85,7 @@
             </div>
           </form>
         </div> <!--div_frm_registrar-->
-
-      	</div> <!-- div_cuerpo-->
-
+    	</div> <!-- div_cuerpo-->
 		</div> <!-- div_contenedorPrincipal -->
 
 
