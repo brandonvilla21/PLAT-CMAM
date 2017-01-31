@@ -47,6 +47,8 @@
 
 					Detalle de error:
 					<?php echo $_GET['error']; ?>
+					<br>
+					Código de error: <?php echo $_GET['status']; ?>
 
 					<br><br>
 					<a href="javascript:window.history.back();" class="btn_aceptar" > Regresar </a>
