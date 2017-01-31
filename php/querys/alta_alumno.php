@@ -232,11 +232,11 @@
 	 * se esté duplicando un campo llave al ejecutar la query.
 	 */
 	else if($status == '23000'){
-		$error = "Es probable que la clave que inteta ingresar ya esté registrada.";
+		$error = "Es posible que la clave que intenta ingresar ya esté registrada.";
 		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);
 	} 
 	else {
-		$error = "Indefinido."
+		$error = "Indefinido.";
 		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);
 	}
 
