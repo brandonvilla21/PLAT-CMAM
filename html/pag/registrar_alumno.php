@@ -14,10 +14,6 @@
 		<script src="../../js/jquery-3.1.1.js"></script>
 		<script src="../../js/js_core.js"></script>
 		<script src="../../js/validar_clave.js"></script>
-
-		<script src="../../js/mysqlwslib.js"></script>
-
-
 		<link rel="stylesheet" href="../../css/estilo_principal.css">
 		<link rel="icon" type="image/png" href="../../img/logo_cmam_100x100.png" />
 	</head>
@@ -27,13 +23,12 @@
 
 		<div id="div_cabecera">
 				<!-- ../div_cebecera.php -->
-		</div><!-- div_cabecera -->
+		</div>
 
 
 		<div id="div_menu_navegacion">
 			<!-- ../div_menu_navegacion.php -->
-		</div> <!-- div_menu_navegacion -->
-
+		</div>
 
 		<div id="div_contenedor_principal" >
 
@@ -44,8 +39,7 @@
 				<div id="div_frm_registrar">
 					<form  method="post" action="../../php/querys/alta_alumno.php" name="frm_registrar_alumno" enctype="multipart/form-data">
 
-
-						<!-- DATOS DE NUEVO INGRESO ----------------------------------------------------->
+						<!-- DATOS DE NUEVO INGRESO -->
 
 						<label class="label_frm">Datos de nuevo ingreso: </label>
 						<br /><hr />
@@ -73,7 +67,9 @@
 						</select>
 						<br />
 						<label class="label_asterisco">Los campos con asterísco son obligatorios (*)</label><br />
+						
 						<!-- Número de control -->
+
 						<label class="label_frm" onclick="" />* Número de control:</label>
 						<input name="id_alumno" id="id_alumno" type="text" class="input_frm" maxlength="9" required>
 						<br />
@@ -84,7 +80,7 @@
 						<br /><br />
 
 						<?php
-							//Consultar total de alumnos:
+							//Consultar total de alumnos registrados en tbl_alumno:
 							$query = "SELECT COUNT(*) AS total_alumnos FROM tbl_alumno;";
 							$result = mysqli_query($conexion, $query);
 							$row = mysqli_fetch_object($result);
@@ -98,11 +94,7 @@
 						onclick="introducirNumeroControlAlumno(document.getElementById('id_alumno').value)">
 						<br /><br />
 
-
-
-
-
-						<!-- DATOS PRINCIPALES ----------------------------------------------------->
+						<!-- DATOS PRINCIPALES -->
 
 						<label class="label_frm">Datos principales: </label>
 						<br /><hr />
@@ -139,7 +131,8 @@
 						>
 						<br><br>
 
-						<!-- INFORMACIÓN DE CONTACTO ----------------------------------------------------->
+						<!-- INFORMACIÓN DE CONTACTO -->
+
 						<label class="label_frm">Información de contacto:  </label>
 						<br /><hr />
 						<label class="label_frm" >* Calle: </label>
@@ -200,8 +193,7 @@
 						<input class="input_frm_correo"  type="email"  maxlength="40" value="@" name="email" style="width: 300px;"  >
 						<br /><br />
 
-
-						<!-- DATOS VARIOS ----------------------------------------------------->
+						<!-- DATOS VARIOS -->
 
 						<label class="label_frm">Datos varios:  </label>
 						<br /><hr />
@@ -237,21 +229,17 @@
 						</select>
 						<br />
 						<label class="label_frm">Foto (MAX: 500 kbs): </label>
-  					<input id="imagen" name="imagen" size="30" type="file" accept=".png, .jpeg, .jpg"/>
+  					<input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg"/>
 						<br />
 						<label class="label_frm">Alergias (descripción): </label>
 						<br />
 						<input class="input_frm"  type="text"  maxlength="25" rows="3" style="width: 500px; height: 60px" name="input_alergia">
-						<!-- <input class="input_frm"  type="text" name="alergia" form="frm_registrar_alumno" rows="3"  maxlength="25"  style="width: 500px; height: 60px"> -->
 						<br /><br />
 
-
-						<!-- DATOS DE CONTROL----------------------------------------------------->
-
+						<!-- DATOS DE CONTROL -->
 
 						<label class="label_frm">Datos de control:  </label>
 						<br /><hr />
-
 						<label class="label_frm">Estatus: </label>
 						<select class="input_frm" name="estatus" id="estatus" style="width: 200px;">
 							<option value="Activo">Activo</option>
@@ -283,27 +271,22 @@
 							<option value="Semi-interno">Semi-interno</option>
 						</select>
 						<br />
-						<label class="label_frm" >Horas de arresto: </label>
+						<label class="label_frm">Horas de arresto: </label>
 						<input class="input_frm"  type="number" value="0" min="0" max="500" name="horas_arresto"  style="width: 70px;">
 						<span class="espacio_horizontal_30px "></span>
 						<label class="label_frm" >Horas de demerito: </label>
 						<input class="input_frm"  type="number" value="0" min="0" max="500" name="puntos_demerito"  style="width: 70px;">
 						<span class="espacio_horizontal_30px "></span>
-
 						<br />
-
-						<label class="label_frm" >Fecha de ingreso: </label>
-
+						<label class="label_frm">Fecha de ingreso: </label>
 						<!-- Retorna una fecha con formta YYYY-MM-DD -->
 						<input id="fecha_ingreso" type="date" name="fecha_ingreso" min="2000-01-01" value="2010-01-01" class="input_frm">
 
-
-						<!-- DATOS DEL PADRE---------------------------------------------------->
+						<!-- DATOS DEL PADRE -->
 
 						<br /><br />
 						<label class="label_frm">Datos del Padre (o tutor):  </label>
 						<br /><hr />
-
 						<label class="label_frm" >* Apellido paterno del padre: </label>
 						<input id="padre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_paterno" required>
 						<br	/>
@@ -379,9 +362,8 @@
 						<input class="input_frm"  type="text"  maxlength="15" name="padre_profesion">
 						<br /><br />
 
+						<!-- DATOS DE LA MADRE -->
 
-
-						<!-- DATOS DE LA MADRE---------------------------------------------------->
 						<label class="label_frm">Datos de la madre:  </label>
 						<br /><hr />
 						<label class="label_frm" >* Apellido paterno de la madre: </label>
@@ -465,7 +447,6 @@
 					</form>
 				</div> <!-- div_frm_login -->
 
-
 			</div> <!-- div_login -->
 
 		</div> <!-- div_contenedorPrincipal -->
@@ -476,8 +457,5 @@
 		</div> <!-- div_pie_pagina -->
 
 
-
-
 	</body>
-
 </html>
