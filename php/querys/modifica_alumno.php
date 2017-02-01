@@ -130,8 +130,8 @@
         <label class="label_frm" >* Apellido paterno: </label>
         <input id="apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="apellido_paterno" required value="<?php echo $apellido_paterno ?>">
         <span class="espacio_horizontal_30px "></span>
-        <label class="label_frm" >* Apellido materno: </label>
-        <input id="apellido_materno" class="input_frm"  type="text"  maxlength="30" name="apellido_materno" required value="<?php echo $apellido_materno ?>">
+        <label class="label_frm" >Apellido materno: </label>
+        <input id="apellido_materno" class="input_frm"  type="text"  maxlength="30" name="apellido_materno" value="<?php echo $apellido_materno ?>">
         <br />
         <label class="label_frm" >* Nombre(s): </label>
         <input id="nombre" class="input_frm"  type="text"  maxlength="30" name="nombre" required style="width: 260px"; value="<?php echo $nombre ?>">
@@ -145,28 +145,28 @@
         <?php endforeach; ?>
         </select>
         <br />
-        <label class="label_frm" >* Fecha de nacimiento: </label>
+        <label class="label_frm" >Fecha de nacimiento: </label>
 
         <!-- Retorna una fecha con formta YYYY-MM-DD -->
-        <input id="fecha_nacimiento" type="date" name="fecha_nacimiento" min="1950-01-01" value="2000-01-01" class="input_frm" required value="<?php echo $fecha_nacimiento ?>">
+        <input id="fecha_nacimiento" type="date" name="fecha_nacimiento" min="1950-01-01" value="2000-01-01" class="input_frm" value="<?php echo $fecha_nacimiento ?>">
         <span class="espacio_horizontal_30px "></span>
-        <label class="label_frm">* CURP: </label>
-        <input id="curp" class="input_frm" required type="text" name="curp" maxlength="18" value="<?php echo $curp?>">
+        <label class="label_frm">CURP: </label>
+        <input id="curp" class="input_frm" type="text" name="curp" maxlength="18" value="<?php echo $curp?>">
         <br><br>
 
         <!-- INFORMACIÓN DE CONTACTO ----------------------------------------------------->
         <label class="label_frm">Información de contacto:  </label>
         <br /><hr />
-        <label class="label_frm" >* Calle: </label>
-        <input class="input_frm"  type="text"  maxlength="30" name="calle" style="width: 350px;" required value="<?php echo $calle?>">
+        <label class="label_frm" >Calle: </label>
+        <input class="input_frm"  type="text"  maxlength="30" name="calle" style="width: 350px;" value="<?php echo $calle?>">
         <span class="espacio_horizontal_30px "></span>
-        <label class="label_frm" >* Colonia: </label>
-        <input class="input_frm"  type="text"  maxlength="30" name="colonia" required value="<?php echo $colonia?>">
+        <label class="label_frm" >Colonia: </label>
+        <input class="input_frm"  type="text"  maxlength="30" name="colonia" value="<?php echo $colonia?>">
         <br />
-        <label class="label_frm" >* Ciudad: </label>
-        <input class="input_frm"  type="text"  maxlength="30" name="ciudad" required value="<?php echo $ciudad?>">
+        <label class="label_frm" >Ciudad: </label>
+        <input class="input_frm"  type="text"  maxlength="30" name="ciudad" value="<?php echo $ciudad?>">
         <span class="espacio_horizontal_30px "></span>
-        <label class="label_frm" >* Estado: </label>
+        <label class="label_frm" >Estado: </label>
         <select id="estado" name="estado" class="input_frm">
         <?php
           $ArrayEstado = array(
@@ -187,8 +187,8 @@
         <?php endforeach; ?>
         </select>
         <br />
-        <label class="label_frm">* Código postal: </label>
-        <input class="input_frm"  type="text"  maxlength="5" name="codigo_postal" required value="<?php echo $codigo_postal?>">
+        <label class="label_frm">Código postal: </label>
+        <input class="input_frm"  type="text"  maxlength="5" name="codigo_postal" value="<?php echo $codigo_postal?>">
         <span class="espacio_horizontal_30px "></span>
         <label class="label_frm" >Número de teléfono: </label>
         <input class="input_frm"  type="text"  maxlength="15" name="numero_telefono" value="<?php echo $numero_telefono?>">
@@ -314,19 +314,19 @@
         <label class="label_frm">Datos del Padre (o tutor):  </label>
         <br /><hr />
 
-        <label class="label_frm" >* Apellido paterno del padre: </label>
-        <input id="padre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_paterno" value="<?php echo $padre_apellido_paterno?>" required>
+        <label class="label_frm" >Apellido paterno del padre: </label>
+        <input id="padre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_paterno" value="<?php echo $padre_apellido_paterno?>">
         <br	/>
-        <label class="label_frm" >* Apellido materno del padre: </label>
-        <input id="padre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_materno" required value="<?php echo $padre_apellido_materno?>">
+        <label class="label_frm" >Apellido materno del padre: </label>
+        <input id="padre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_materno" value="<?php echo $padre_apellido_materno?>">
         <br />
-        <label class="label_frm" >* Nombre(s) del padre: </label>
-        <input id="padre_nombre" class="input_frm"  type="text"  maxlength="30" name="padre_nombre" required style="width: 260px;" value="<?php echo $padre_nombre?>">
+        <label class="label_frm" >Nombre(s) del padre: </label>
+        <input id="padre_nombre" class="input_frm"  type="text"  maxlength="30" name="padre_nombre" style="width: 260px;" value="<?php echo $padre_nombre?>">
         <span class="espacio_horizontal_30px "></span>
         <br />
         <label class="label_frm" >Fecha de nacimiento del padre: </label>
         <!-- Retorna una fecha con formta YYYY-MM-DD -->
-        <input id="padre_fecha_nacimiento" type="date" name="padre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm" required value="<?php echo $padre_fecha_nacimiento?>">
+        <input id="padre_fecha_nacimiento" type="date" name="padre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm" value="<?php echo $padre_fecha_nacimiento?>">
         <br>
         <label class="label_frm" >Calle: </label>
         <input class="input_frm"  type="text"  maxlength="30" name="padre_calle" style="width: 350px;" value="<?php echo $padre_calle?>">
@@ -366,19 +366,19 @@
         <!-- DATOS DE LA MADRE---------------------------------------------------->
         <label class="label_frm">Datos de la madre:  </label>
         <br /><hr />
-        <label class="label_frm" >* Apellido paterno de la madre: </label>
-        <input id="madre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_paterno" required value="<?php echo $madre_apellido_paterno?>">
+        <label class="label_frm" >Apellido paterno de la madre: </label>
+        <input id="madre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_paterno" value="<?php echo $madre_apellido_paterno?>">
         <br	/>
-        <label class="label_frm" >* Apellido materno de la madre: </label>
-        <input id="madre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_materno" required value="<?php echo $madre_apellido_materno?>">
+        <label class="label_frm" >Apellido materno de la madre: </label>
+        <input id="madre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_materno" value="<?php echo $madre_apellido_materno?>">
         <br />
-        <label class="label_frm" >* Nombre(s) de la madre: </label>
-        <input id="madre_nombre" class="input_frm"  type="text"  maxlength="30" name="madre_nombre" required style="width: 260px;" value="<?php echo $madre_nombre?>">
+        <label class="label_frm" >Nombre(s) de la madre: </label>
+        <input id="madre_nombre" class="input_frm"  type="text"  maxlength="30" name="madre_nombre" style="width: 260px;" value="<?php echo $madre_nombre?>">
         <span class="espacio_horizontal_30px "></span>
         <br />
         <label class="label_frm" >Fecha de nacimiento de la madre: </label>
         <!-- Retorna una fecha con formta YYYY-MM-DD -->
-        <input id="madre_fecha_nacimiento" type="date" name="madre_fecha_nacimiento" min="1940-01-01" value="<?php echo $madre_fecha_nacimiento?>" class="input_frm" required>
+        <input id="madre_fecha_nacimiento" type="date" name="madre_fecha_nacimiento" min="1940-01-01" value="<?php echo $madre_fecha_nacimiento?>" class="input_frm">
         <br>
         <label class="label_frm" >Calle: </label>
         <input class="input_frm"  type="text"  maxlength="30" name="madre_calle" style="width: 350px;" value="<?php echo $madre_calle?>">
