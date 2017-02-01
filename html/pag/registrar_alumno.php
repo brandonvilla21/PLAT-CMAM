@@ -67,7 +67,7 @@
 						</select>
 						<br />
 						<label class="label_asterisco">Los campos con asterísco son obligatorios (*)</label><br />
-						
+
 						<!-- Número de control -->
 
 						<label class="label_frm" onclick="" />* Número de control:</label>
@@ -101,8 +101,8 @@
 						<label class="label_frm" >* Apellido paterno: </label>
 						<input id="apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="apellido_paterno" required>
 						<span class="espacio_horizontal_30px "></span>
-						<label class="label_frm" >* Apellido materno: </label>
-						<input id="apellido_materno" class="input_frm"  type="text"  maxlength="30" name="apellido_materno" required >
+						<label class="label_frm" >Apellido materno: </label>
+						<input id="apellido_materno" class="input_frm"  type="text"  maxlength="30" name="apellido_materno">
 						<br />
 						<label class="label_frm" >* Nombre(s): </label>
 						<input id="nombre" class="input_frm"  type="text"  maxlength="30" name="nombre" required style="width: 260px;">
@@ -113,13 +113,13 @@
 							<option value="M">Mujer</option>
 						</select>
 						<br />
-						<label class="label_frm" >* Fecha de nacimiento: </label>
+						<label class="label_frm" >Fecha de nacimiento: </label>
 
 						<!-- Retorna una fecha con formta YYYY-MM-DD -->
-						<input id="fecha_nacimiento" type="date" name="fecha_nacimiento" min="1950-01-01" value="2000-01-01" class="input_frm" required>
+						<input id="fecha_nacimiento" type="date" name="fecha_nacimiento" min="1950-01-01" value="2000-01-01" class="input_frm">
 						<span class="espacio_horizontal_30px "></span>
-						<label class="label_frm">* CURP: </label>
-						<input id="curp" class="input_frm" required type="text" name="curp" maxlength="18"
+						<label class="label_frm">CURP: </label>
+						<input id="curp" class="input_frm" type="text" name="curp" maxlength="18"
 							onfocus="generarCurp(
 								document.getElementById('apellido_paterno').value,
 								document.getElementById('apellido_materno').value,
@@ -135,16 +135,16 @@
 
 						<label class="label_frm">Información de contacto:  </label>
 						<br /><hr />
-						<label class="label_frm" >* Calle: </label>
-						<input class="input_frm"  type="text"  maxlength="30" name="calle" style="width: 350px;" required>
+						<label class="label_frm" >Calle: </label>
+						<input class="input_frm"  type="text"  maxlength="30" name="calle" style="width: 350px;">
 						<span class="espacio_horizontal_30px "></span>
-						<label class="label_frm" >* Colonia: </label>
-						<input class="input_frm"  type="text"  maxlength="30" name="colonia" required>
+						<label class="label_frm" >Colonia: </label>
+						<input class="input_frm"  type="text"  maxlength="30" name="colonia">
 						<br />
-						<label class="label_frm" >* Ciudad: </label>
-						<input class="input_frm"  type="text"  maxlength="30" name="ciudad" required>
+						<label class="label_frm" >Ciudad: </label>
+						<input class="input_frm"  type="text"  maxlength="30" name="ciudad">
 						<span class="espacio_horizontal_30px "></span>
-						<label class="label_frm" >* Estado: </label>
+						<label class="label_frm" >Estado: </label>
 						<select id="estado" name="estado" class="input_frm" >
 							<option value="Jalisco">Jalisco</option>
 							<option value="Aguascalientes">Aguascalientes</option>
@@ -180,8 +180,8 @@
 							<option value="Zacatecas">Zacatecas</option>
 						</select>
 						<br />
-						<label class="label_frm">* Código postal: </label>
-						<input class="input_frm"  type="text"  maxlength="5" name="codigo_postal" required>
+						<label class="label_frm">Código postal: </label>
+						<input class="input_frm"  type="text"  maxlength="5" name="codigo_postal">
 						<span class="espacio_horizontal_30px "></span>
 						<label class="label_frm" >Número de teléfono: </label>
 						<input class="input_frm"  type="text"  maxlength="15" name="numero_telefono">
@@ -287,19 +287,19 @@
 						<br /><br />
 						<label class="label_frm">Datos del Padre (o tutor):  </label>
 						<br /><hr />
-						<label class="label_frm" >* Apellido paterno del padre: </label>
-						<input id="padre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_paterno" required>
+						<label class="label_frm" >Apellido paterno del padre: </label>
+						<input id="padre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_paterno">
 						<br	/>
-						<label class="label_frm" >* Apellido materno del padre: </label>
-						<input id="padre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_materno" required >
+						<label class="label_frm" >Apellido materno del padre: </label>
+						<input id="padre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="padre_apellido_materno">
 						<br />
-						<label class="label_frm" >* Nombre(s) del padre: </label>
-						<input id="padre_nombre" class="input_frm"  type="text"  maxlength="30" name="padre_nombre" required style="width: 260px;">
+						<label class="label_frm" >Nombre(s) del padre: </label>
+						<input id="padre_nombre" class="input_frm"  type="text"  maxlength="30" name="padre_nombre" style="width: 260px;">
 						<span class="espacio_horizontal_30px "></span>
 						<br />
 						<label class="label_frm" >Fecha de nacimiento del padre: </label>
 						<!-- Retorna una fecha con formta YYYY-MM-DD -->
-						<input id="padre_fecha_nacimiento" type="date" name="padre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm" required>
+						<input id="padre_fecha_nacimiento" type="date" name="padre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm">
 						<br>
 						<label class="label_frm" >Calle: </label>
 						<input class="input_frm"  type="text"  maxlength="30" name="padre_calle" style="width: 350px;" >
@@ -366,19 +366,19 @@
 
 						<label class="label_frm">Datos de la madre:  </label>
 						<br /><hr />
-						<label class="label_frm" >* Apellido paterno de la madre: </label>
-						<input id="madre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_paterno" required>
+						<label class="label_frm" >Apellido paterno de la madre: </label>
+						<input id="madre_apellido_paterno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_paterno">
 						<br	/>
-						<label class="label_frm" >* Apellido materno de la madre: </label>
-						<input id="madre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_materno" required >
+						<label class="label_frm" >Apellido materno de la madre: </label>
+						<input id="madre_apellido_materno" class="input_frm"  type="text"  maxlength="30" name="madre_apellido_materno">
 						<br />
-						<label class="label_frm" >* Nombre(s) de la madre: </label>
-						<input id="madre_nombre" class="input_frm"  type="text"  maxlength="30" name="madre_nombre" required style="width: 260px;">
+						<label class="label_frm" >Nombre(s) de la madre: </label>
+						<input id="madre_nombre" class="input_frm"  type="text"  maxlength="30" name="madre_nombre" style="width: 260px;">
 						<span class="espacio_horizontal_30px "></span>
 						<br />
 						<label class="label_frm" >Fecha de nacimiento de la madre: </label>
 						<!-- Retorna una fecha con formta YYYY-MM-DD -->
-						<input id="madre_fecha_nacimiento" type="date" name="madre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm" required>
+						<input id="madre_fecha_nacimiento" type="date" name="madre_fecha_nacimiento" min="1940-01-01" value="2000-01-01" class="input_frm">
 						<br>
 						<label class="label_frm" >Calle: </label>
 						<input class="input_frm"  type="text"  maxlength="30" name="madre_calle" style="width: 350px;" >
