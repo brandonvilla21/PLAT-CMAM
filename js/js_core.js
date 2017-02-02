@@ -151,13 +151,13 @@ function modificaPersonal() {
 
 }
 
-function getIdPersonal() {
+function getAlumno() {
 
 	var id_alumno = document.getElementById("id_alumno_pago").value;
 
 	$.ajax({
 		type		: "GET",
-		url 		: "../../php/querys/consulta_id_personal.php",
+		url 		: "../../php/querys/consulta_datos_alumno.php",
 		data		: {
 			'id_alumno' : id_alumno
 		},
