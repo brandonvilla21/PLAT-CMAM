@@ -142,9 +142,9 @@ function modificaAlumno() {
 }
 
 function modificaPersonal() {
-	//Obtiene el id del alumno y lo almacena en una variable
+	//Obtiene el id del personal y lo almacena en una variable
 	var id_personal = document.getElementById("id_personal").value;
-	//Llama al archivo consulta_alumno.php pasando como parametro el id del alumno
+	//Llama al archivo consulta_personal.php pasando como parametro el id del personal
 	$("#div_resultado").load("../../php/querys/modifica_personal.php",{
 		'id_personal': id_personal
 	});
@@ -152,15 +152,50 @@ function modificaPersonal() {
 }
 
 function getIdPersonal() {
-	var datas;
+
+	var id_alumno = document.getElementById("id_alumno_pago").value;
+
 	$.ajax({
 		type		: "GET",
 		url 		: "../../php/querys/consulta_id_personal.php",
 		data		: {
-			'id_alumno' : 'AS0117000'
+			'id_alumno' : id_alumno
 		},
 		success : function(response) {
-			alert(response);//De esta manera imprime todo lo que este en echo
+			/*En la variable json contendra todo el JSON que se obtuvo de la consulta*/
+			var json= JSON.parse(response);
+
+			document.getElementById('h4__datosAlumno').innerHTML = 'Datos del alumno:';
+			document.getElementById('span__lineaAlumno').innerHTML = '<hr>';
+			document.getElementById('span__lineaPago').innerHTML = '<hr>';
+
+			/*Por medio de un for, accede a todo el JSON y manda los datos por getElementById()*/
+			for (var variable in json) {
+				document.getElementById(`a__${variable}_alumno`).innerHTML = json[variable];
+			}
+			document.getElementById('img__foto_alumno').src = '../../img/itcg_logo.jpg';
+			document.getElementById('div_pago').style.display = 'visible';
+		},
+		error   : function(xhr, ajaxOptions, thrownError) {
+			alert("Error: "+ xhr.status);
+			alert(thrownError);
+		}
+	});
+}
+
+function getDatosPago() {
+	var id_concepto = document.getElementById("id_concepto_pago").value;
+
+	$.ajax({
+		type		: "GET",
+		url 		: "../../php/querys/consulta_concepto_pago.php",
+		data		: {
+			'id_concepto_pago' : id_concepto
+		},
+		success : function (response) {
+			var json = JSON.parse(response);
+			document.getElementById("descripcion__pago").innerHTML = `DESCRIPCION: ${json['descripcion']}`;
+			document.getElementById("precio__pago").innerHTML = `PRECIO: $${json['precio']}`;
 		},
 		error   : function(xhr, ajaxOptions, thrownError) {
 			alert("Error: "+ xhr.status);
