@@ -56,7 +56,7 @@
 			    <th style="width: 400em;">Alumno:</th>
 			    <th style="width: 100em;">Grado: </th>
 			    <th style="width: 35em;">Pts. de demerito: </th>
-			    <th style="width: 35em;">Horas</th>
+			    <th style="width: 35em;">Horas de arresto</th>
 			  </tr>
 			  <tr>
 			  	<td><?php echo $id_alumno?></td>
@@ -70,6 +70,29 @@
 						
 								<!-- div_resultado -->
 		</div>
+
+		<div>
+			<br>
+
+			<form>
+				<label>Motivo de arresto:</label>
+				<br>
+				<input class="input_frm"  type="text"  maxlength="50" rows="3" style="width: 500px; height: 60px" name="motivo_arresto">
+				<br><br>
+				<label>Total de horas:</label> <span class="espacio_horizontal_30px "></span>
+				<input class="input_frm"  type="number" value="1" min="0.00" name="horas_arresto" step="0.10" style="width: 100px;">
+				<br><br>
+				<input type="submit" class="btn_aceptar" name="btn_aceptar">
+
+
+			</form>
+
+
+		</div>
+
+
+
+
 				
 
 
