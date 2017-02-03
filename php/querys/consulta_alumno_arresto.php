@@ -74,13 +74,17 @@
 		<div>
 			<br>
 
-			<form>
+			<form id="alta_arresto" method="post" action="../../php/querys/alta_arresto.php" name="alta_arresto">
 				<label>Motivo de arresto:</label>
 				<br>
-				<input class="input_frm"  type="text"  maxlength="50" rows="3" style="width: 500px; height: 60px" name="motivo_arresto">
+				<input class="input_frm"  type="text"  maxlength="50" rows="3" style="width: 500px; height: 60px" name="motivo">
 				<br><br>
-				<label>Total de horas:</label> <span class="espacio_horizontal_30px "></span>
-				<input class="input_frm"  type="number" value="1" min="0.00" name="horas_arresto" step="0.10" style="width: 100px;">
+				<label>Total de horas:</label> 
+				<input class="input_frm"  type="number" value="1" min="0.00" name="horas" step="1" style="width: 75px;">
+				<span class="espacio_horizontal_30px "></span>
+				<label>Puntos de demérito:</label> 
+				<input class="input_frm"  type="number" value="1" min="0.00" name="puntos" step="1" style="width: 75px;">
+
 				<br><br>
 				<input type="submit" class="btn_aceptar" name="btn_aceptar">
 
@@ -88,6 +92,10 @@
 			</form>
 
 
+		</div>
+
+		<div>
+			
 		</div>
 
 

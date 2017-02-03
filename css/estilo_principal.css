@@ -382,3 +382,14 @@ table {
 	border-spacing: 0;
 	color: #2e2e2e;
 }
+
+
+.estilo_heredado {
+	background-color:inherit;
+	border: inherit;
+	text-decoration: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	width: inherit;
+	width: inherit;
+}

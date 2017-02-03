@@ -37,7 +37,7 @@
 				<h1>Registrar alumno:</h1>
 
 				<div id="div_frm_registrar">
-					<form  method="post" action="../../php/querys/alta_alumno.php" name="frm_registrar_alumno" enctype="multipart/form-data">
+					<form  id="frm_registrar_alumno" method="post" action="../../php/querys/alta_alumno.php" name="frm_registrar_alumno" enctype="multipart/form-data">
 
 						<!-- DATOS DE NUEVO INGRESO -->
 
@@ -233,7 +233,10 @@
 						<br />
 						<label class="label_frm">Alergias (descripción): </label>
 						<br />
-						<input class="input_frm"  type="text"  maxlength="25" rows="3" style="width: 500px; height: 60px" name="input_alergia">
+						<textarea class="input_frm" form="frm_registrar_alumno" id="input_alergia" name ="input_alergia" maxlength="50" style="width: 500px; height: 60px"> </textarea>
+
+
+						<!-- <input class="input_frm"  type="text"  maxlength="25" rows="3" style="width: 500px; height: 60px" name="input_alergia"> -->
 						<br /><br />
 
 						<!-- DATOS DE CONTROL -->
