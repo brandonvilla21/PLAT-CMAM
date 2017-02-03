@@ -140,7 +140,16 @@ function modificaAlumno() {
 	});
 
 }
-
+function registrarPago() {
+	//Obtiene el id del alumno y el pago. Los almacena en variables
+	var id_alumno = document.getElementById("id_alumno").value;
+	var id_concepto_pago = document.getElementById("id_concepto_pago").value;
+	//Llama al archivo consulta_alumno.php pasando como parametro el id del alumno
+	$("#div_resultado").load("../../php/querys/alta_pago.php",{
+		'id_alumno'				 : id_alumno,
+		'id_concepto_pago' : id_concepto_pago
+	});
+}
 function modificaPersonal() {
 	//Obtiene el id del personal y lo almacena en una variable
 	var id_personal = document.getElementById("id_personal").value;
@@ -150,8 +159,43 @@ function modificaPersonal() {
 	});
 
 }
+ function altaPago (idAlumno, idConcepto, fecha, total ) {
+	 //Obtiene los datos y los almacena en variables
+	 var saldo_acredor = document.getElementById("saldo_acredor").value;
+	 var saldo_deudor;
 
-function getAlumno() {
+	 if (total > saldo_acredor) {
+	 	saldo_deudor = total-saldo_acredor;
+	 } else { saldo_deudor = 0; }
+
+	 $.ajax({
+		 type : "POST",
+		 url : "../../php/querys/alta_estado_cuenta.php",
+		 data : {
+			 'id_alumno'     : idAlumno,
+			 'id_concepto' 	 : idConcepto,
+			 'fecha_cargo' 	 : fecha,
+			 'total' 				 : total,
+			 'descuento' 		 : 0,
+			 'saldo_acredor' : saldo_acredor,
+			 'saldo_deudor'  : saldo_deudor
+		 },
+		 success : function(response) {
+		  var json = JSON.parse(response);
+			alert(response);
+			 if(json['respuesta'] == true){
+				 window.location = '../../html/pag/alumno_registro_correcto.php';
+			 } else {
+				 window.location = '../../html/pag/alumno_registro_incorrecto.php';
+			 }
+		 },
+		 error : function(xhr, ajaxOptions, thrownError) {
+ 			alert("Error: "+ xhr.status);
+ 			alert(thrownError);
+ 		}
+	 });
+ }
+function getAlumno() {//Sin utilizar
 
 	var id_alumno = document.getElementById("id_alumno_pago").value;
 
@@ -183,7 +227,7 @@ function getAlumno() {
 	});
 }
 
-function getDatosPago() {
+function getDatosPago() {//Sin utilizar
 	var id_concepto = document.getElementById("id_concepto_pago").value;
 
 	$.ajax({

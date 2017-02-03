@@ -218,44 +218,18 @@
 	padding-top: 1rem;
 }
 
-#div_datos_alumno {
+#div_contenedor_datos {
 	display: flex;
-	flex-direction: column;
-	font-family: muli_regular,sans-serif;;
 }
-#div_informacion_alumno {
-	display: flex;
-	justify-content: space-between;
-	padding: .5rem 0;
-}
-
-#div_foto_alumno {
+#div_contenedor_boton {
 	display: flex;
 	align-items: center;
+	padding-left: .5rem;
+}
+#div_registro_pago {
+	font-family: muli-regular, sans-serif;
 }
 
-#img__foto_alumno {
-	width: 18rem;
-}
-
-#div_seleccionar_pago{
-	padding: .5rem 0;
-}
-#div_abono {
-	display: flex;
-	justify-content: center;
-	align-items: baseline;
-
-}
-#label__abonar {
-	padding: 0 .5rem;
-}
-#id_saldo_acredor{
-	margin: 0 .5rem;
-}
-#btn_abono {
-	margin: 0 .5rem;
-}
 .label_frm {
 	color: #fff;
 	font-family: muli_regular;

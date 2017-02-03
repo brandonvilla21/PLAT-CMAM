@@ -28,16 +28,23 @@
         <!--Lo escencial de la pagina: -->
         <h1>Registrar pago</h1>
 				<br>
-				<label class="label_frm">Número de control del alumno:</label>
-				<input name="id_alumno" id="id_alumno_pago" type="text" class="input_frm" maxlength="9" required>
-				<br>
-				<label class="label_frm">Seleccionar concepto de pago:</label>
-				<select class="input_frm" name="pago" id="id_concepto_pago" style="width: 203px;">
-					<option value="1">Inscripcion</option>
-					<option value="2">Reinscripcion</option>
-					<option value="3">Uniforme</option>
-				</select>
-				<input name="bnt_aceptar" id="btn_aceptar" type="button" class="btn_frm_aceptar" value="Aceptar" onclick="getAlumno()"/>
+				<div id="div_contenedor_datos">
+					<div id="div_contenedor_labels">
+						<label class="label_frm">Número de control del alumno:</label>
+						<input name="id_alumno" id="id_alumno" type="text" class="input_frm" maxlength="9" required>
+						<br>
+						<label class="label_frm">Seleccionar concepto de pago:</label>
+						<select class="input_frm" name="id_concepto_pago" id="id_concepto_pago" style="width: 203px;">
+							<option value="1">Inscripcion</option>
+							<option value="2">Reinscripcion</option>
+							<option value="3">Uniforme</option>
+						</select>
+					</div>
+					<div id="div_contenedor_boton">
+						<input name="bnt_aceptar" id="btn_aceptar" type="button" class="btn_frm_aceptar" value="Aceptar" onclick="registrarPago()"/>
+					</div>
+				</div>
+
 
         <div id="div_resultado">
 
