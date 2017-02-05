@@ -1,6 +1,8 @@
 <?php
 	header("Content-Type: text/html;charset=utf-8");
 	include("../conexion_db_cmam.php");
+	include("functions_alumno.php");
+
 	/*Seleciona la base de datos a utilizar*/
 	mysqli_select_db($conexion, $base_de_datos)
 		or die("Ha fallado la conexion con la base de datos");
@@ -71,7 +73,7 @@
 			<form id="alta_arresto" method="post" action="../../php/querys/alta_arresto.php" name="alta_arresto">
 				<label>Motivo de arresto:</label>
 				<br>
-				<textarea name="motivo" class="input_frm" form="alta_arresto" style="width: 500px; height: 60px" required="true"></textarea>
+				<textarea name="motivo" class="input_frm" form="alta_arresto" style="width: 500px; height: 60px" required="true" maxlength="300"></textarea>
 
 				<br><br>
 				<label>Total de horas:</label> 
@@ -80,7 +82,7 @@
 				<label>Puntos de demérito:</label> 
 				<input class="input_frm"  type="number" value="1" min="0.00" name="puntos" step="1" style="width: 75px;">
 				<br><br>
-				<input type="submit" class="btn_aceptar" name="btn_aceptar">
+				<input type="submit" class="btn_aceptar" name="btn_aceptar" value="Cargar arresto">
 				<br>
 			</form>
 			<br>
@@ -98,46 +100,19 @@
 				    <th style="width: 40em;">Fecha</th>
 				    <th style="width: 20em;">Horas</th>
 				    <th style="width: 20em;">Puntos</th>
-				    <th style="width: 30em;">estado</th>
+				    <th style="width: 30em;">Estado</th>
 			  	</tr>
 
 			  	<?php 
-			  		$query = "SELECT 
-			  			id_arresto,
-			  			id_alumno,
-			  			motivo,
-			  			fecha,
-			  			horas,
-			  			puntos,
-			  			estado 
-						FROM tbl_arresto
-						WHERE id_alumno = '$id_alumno'";
+			  		
+			  		$result = getHistorialArrestos($id_alumno, $conexion);
 
-						$result = mysqli_query($conexion, $query);
-
-					  	/*Almacena los datos en variables*/
-						while($row = mysqli_fetch_array($result)) {
-							echo '<tr>';
-							
-								echo '<td>'. $row['id_arresto'] .'</td>';
-								echo '<td>'. $row['motivo'] .'</td>';
-								echo '<td>'. $row['fecha'] .'</td>';
-								echo '<td>'. $row['horas'] .'</td>';
-								echo '<td>'. $row['puntos'] .'</td>';
-								echo '<td ';
-								if($row['estado'] == 'DEBIDO'){
-									 echo ' style="background-color: #fdbab3 ;" ';
-								}
-								echo '>' . $row['estado'] . '</td>';
-							echo '</tr>';
-						}
-
-			  		?>
+				  	imprimirHistorialArresto($result);
+		  		?>
 
 			</table>
 
 		</div>
-
 
 
     <?php

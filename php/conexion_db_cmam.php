@@ -1,4 +1,6 @@
 <?php
+	
+	date_default_timezone_set("America/Mexico_City");
 
 	//Parametros de inicio de sesion en la base de datos:
 	header("Content-Type: text/html;charset=utf-8");
