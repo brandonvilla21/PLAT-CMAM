@@ -229,7 +229,14 @@
 #div_registro_pago {
 	font-family: muli-regular, sans-serif;
 }
+#div_alumno_encontrado {
+	display: flex;
+	flex-direction: column;
+	padding-top: .5rem;
+  justify-content: space-between;
+	font-family: muli_regular, sans-serif;
 
+}
 .label_frm {
 	color: #fff;
 	font-family: muli_regular;

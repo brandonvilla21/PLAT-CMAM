@@ -32,11 +32,15 @@
 
 						<label class="label_frm">Número de control:</label>
 						<input name="id_alumno" id="id_alumno" type="text" class="input_frm" maxlength="9" required>
-						<input name="bnt_buscar_alumno" id="btn_buscar_alumno" type="button" class="btn_frm_aceptar" value="Buscar alumno" onclick="()"/>
+						<input name="bnt_buscar_alumno" id="btn_buscar_alumno" type="button" class="btn_frm_aceptar" value="Buscar alumno" onclick="consultaPagos()"/>
 
 					</form>
 
 				</div>
+
+        <div id="div_resultado">
+
+        </div>
 
       </div><!--div_cuerpo-->
     </div><!--div_contenedor_principal-->

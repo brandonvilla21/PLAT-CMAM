@@ -28,14 +28,40 @@
 
 	function getHistorialArrestos($id_alumno, $conexion){
 		//Retorna un arreglo de tbl_arresto
-		$query = "SELECT id_arresto, id_alumno, motivo, fecha, horas, puntos, estado 
+		$query = "SELECT id_arresto, id_alumno, motivo, fecha, horas, puntos, estado
 				  FROM tbl_arresto
 				  WHERE id_alumno = '$id_alumno'";
 				  $result = mysqli_query($conexion, $query);
 	  	return $result;
 	}
 
+	function getEstadoCuenta($id_alumno, $conexion, $query){
+		//Retorna un arreglo de tbl_arresto
+	  $result = mysqli_query($conexion, $query);
+  	return $result;
+	}
+	function imprimirEstadoCuenta($result){
+		while($row = mysqli_fetch_array($result)) {
+			$debe  						= $row['saldo_deudor'];
+			$abono 						= $row['saldo_acredor'];
+			$id_estado_cuenta = $row['id_estado_cuenta'];
+			echo '<tr>';
+				echo '<td>'. $row['descripcion'] .'</td>';
+				echo '<td>'. "$".$row['total'] .'</td>';
+				echo '<td>'. "$".$abono .'</td>';
+				echo '<td>'. "$".$debe .'</td>';
+				if($debe > 0 ){
+					echo '<td ';
+					echo ' style="background-color: #fdbab3 ;" ';
+					echo '><a href ="../../html/pag/consultar_abono.php?mensaje='.$id_estado_cuenta.'">' . "DEBE" . '</a></td>';
 
+				} else {
+					echo '<td>PAGADO</td>';
+				}
+			echo '</tr>';
+		}
+
+	}
 	function imprimirHistorialArresto($result){
 		while($row = mysqli_fetch_array($result)) {
 			echo '<tr>';
@@ -54,7 +80,7 @@
 
 	}
 
-	
+
 
 
 

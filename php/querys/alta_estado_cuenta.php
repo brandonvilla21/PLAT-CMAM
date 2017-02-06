@@ -18,6 +18,7 @@
   $query =
   "INSERT INTO `tbl_estado_cuenta`
   (
+		`id_estado_cuenta`,
     `id_alumno`,
     `id_concepto_pago`,
     `fecha_cargo`,
@@ -28,6 +29,7 @@
   )
   VALUES
   (
+		0,
     '$id_alumno',
     '$id_concepto_pago',
     '$fecha_cargo',
@@ -44,6 +46,8 @@
     $json = json_encode($array);
     echo $json;
   } else {
+		echo mysqli_error($conexion);
+
     $array = array('respuesta' => false);
     $json = json_encode($array);
     echo $json;
