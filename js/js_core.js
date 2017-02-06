@@ -182,68 +182,27 @@ function modificaPersonal() {
 		 },
 		 success : function(response) {
 		  var json = JSON.parse(response);
-			alert(response);
-			 if(json['respuesta'] == true){
-				 window.location = '../../html/pag/alumno_registro_correcto.php';
-			 } else {
-				 window.location = '../../html/pag/alumno_registro_incorrecto.php';
-			 }
-		 },
-		 error : function(xhr, ajaxOptions, thrownError) {
- 			alert("Error: "+ xhr.status);
- 			alert(thrownError);
- 		}
+		 	if(json['respuesta'] == true){
+			 var mensaje= 'Se realizo el pago correctamente!'
+			 window.location = '../../html/pag/operacion_exitosa.php?mensaje='+mensaje;
+
+		 	} else {
+			 window.location = '../../html/pag/alumno_registro_incorrecto.php';
+		 	}
+		 	},
+			 error : function(xhr, ajaxOptions, thrownError) {
+	 			alert("Error: "+ xhr.status);
+	 			alert(thrownError);
+			}
 	 });
  }
-function getAlumno() {//Sin utilizar
 
-	var id_alumno = document.getElementById("id_alumno_pago").value;
+function consultaPagos() {
+	var id_alumno = document.getElementById('id_alumno').value;
 
-	$.ajax({
-		type		: "GET",
-		url 		: "../../php/querys/consulta_datos_alumno.php",
-		data		: {
-			'id_alumno' : id_alumno
-		},
-		success : function(response) {
-			/*En la variable json contendra todo el JSON que se obtuvo de la consulta*/
-			var json= JSON.parse(response);
-
-			document.getElementById('h4__datosAlumno').innerHTML = 'Datos del alumno:';
-			document.getElementById('span__lineaAlumno').innerHTML = '<hr>';
-			document.getElementById('span__lineaPago').innerHTML = '<hr>';
-
-			/*Por medio de un for, accede a todo el JSON y manda los datos por getElementById()*/
-			for (var variable in json) {
-				document.getElementById(`a__${variable}_alumno`).innerHTML = json[variable];
-			}
-			document.getElementById('img__foto_alumno').src = '../../img/itcg_logo.jpg';
-			document.getElementById('div_pago').style.display = 'visible';
-		},
-		error   : function(xhr, ajaxOptions, thrownError) {
-			alert("Error: "+ xhr.status);
-			alert(thrownError);
-		}
-	});
-}
-
-function getDatosPago() {//Sin utilizar
-	var id_concepto = document.getElementById("id_concepto_pago").value;
-
-	$.ajax({
-		type		: "GET",
-		url 		: "../../php/querys/consulta_concepto_pago.php",
-		data		: {
-			'id_concepto_pago' : id_concepto
-		},
-		success : function (response) {
-			var json = JSON.parse(response);
-			document.getElementById("descripcion__pago").innerHTML = `DESCRIPCION: ${json['descripcion']}`;
-			document.getElementById("precio__pago").innerHTML = `PRECIO: $${json['precio']}`;
-		},
-		error   : function(xhr, ajaxOptions, thrownError) {
-			alert("Error: "+ xhr.status);
-			alert(thrownError);
-		}
-	});
+	if(id_alumno != '') {
+		$('#div_resultado').load("../../php/querys/consulta_pago.php",{
+			'id_alumno': id_alumno
+		});
+	}
 }
