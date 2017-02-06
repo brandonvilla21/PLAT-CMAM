@@ -6,7 +6,7 @@
 		or die("Ha fallado la conexion con la base de datos");
 
 	$id_alumno = mb_strtoupper($_POST['id_alumno'],'utf-8');
-  $query = "SELECT id_alumno, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, sexo, calle, colonia, ciudad, numero_telefono, email, codigo_postal, numero_celular, rango
+  $query = "SELECT id_alumno, nombre, apellido_paterno, apellido_materno, fecha_nacimiento, sexo, calle, colonia, ciudad, numero_telefono, email, codigo_postal, numero_celular, rango, foto
 						FROM tbl_alumno
 						WHERE id_alumno = '$id_alumno'";
 	$result = mysqli_query($conexion, $query);
@@ -27,7 +27,9 @@
 			$codigo_postal 		= $row['codigo_postal'];
 			$numero_celular		=	$row['numero_celular'];
 			$rango						=	$row['rango'];
+			$foto							= $row['foto'];
 	}
+
 ?>
 
 <div id="div_frm_registrar">
@@ -56,7 +58,15 @@
 						<p class="dato_alumno">Email: <?php echo $email ?></p>
 					</div>
 					<div id="div_foto">
-						<img src="../../img/itcg_logo.jpg" >
+						<?php
+					    if ($foto != "NULL.jpg") {
+								$image_path = "../../img/foto/".$foto;
+					    ?>
+							<img src="<?php echo $image_path?>">
+							<?php } else { ?>
+								<img src="../../img/logo_cmam_1000x1000.png">
+								<p class="dato_alumno">El alumno no tiene asociada una foto.</p>
+							<?php  }?>
 					</div>
 			</div>
 

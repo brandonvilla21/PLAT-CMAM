@@ -10,6 +10,7 @@
 	if($_FILES['foto']['name'] == ''){
 		echo "no se seleccionó ningun archivo.";
 		$nombre_foto = "NULL.jpg";
+
 	}
 	else {
 
@@ -18,7 +19,15 @@
 
 		//Obtener la extension del archivo.
 		$extension = explode("/", $_FILES['foto']['type'])[1];
-			
+
+		//Se establece el tipo de imagen para poder identificar la extensión de la imagen.
+		// $extension = $_FILES['foto']['type'];
+		// switch ($extension) {
+		// 	case "image/jpg":		$extension = "jpg"; 	break;
+		// 	case "image/jpeg": 	$extension = "jpg"; 	break;
+		// 	case "image/png":  	$extension = "png"; 	break;
+		// }
+
 		//Nombre que tendrá la foto = id_alumno + extensión. Ejemplo: AS0117000.jpg
 		$nombre_foto = mb_strtoupper($_REQUEST['id_alumno'],'utf-8') . ".". $extension;
 
@@ -29,7 +38,7 @@
 		copy($archivo, $carpeta_fotos . $nombre_foto);
 
 	}
-	
+
 
 	/*Variables que obtienen los datos del formulario*/
 	$id_alumno 							= mb_strtoupper($_REQUEST['id_alumno'],'utf-8');
@@ -88,7 +97,7 @@
 	$madre_numero_celular		= $_REQUEST['madre_numero_celular'];
 	$madre_email						= $_REQUEST['madre_email'];
 	$madre_profesion				= mb_strtoupper($_REQUEST['madre_profesion'],'utf-8');
-	
+
 
 
 
@@ -222,19 +231,19 @@
 	//Se verifica el estado de la última consulta:
 	$status = mysqli_sqlstate ($conexion);
 
-	
+
 	//Código de status: 00000: La ultima consulta fué realizada con exito.
 	if($status == '00000'){
 		header('Location: ../../html/pag/alumno_registro_correcto.php');
-	} 
+	}
 
-	/* Código de status: Cuando el codigo es 23000, eprobable que 
+	/* Código de status: Cuando el codigo es 23000, eprobable que
 	 * se esté duplicando un campo llave al ejecutar la query.
 	 */
 	else if($status == '23000'){
 		$error = "Es posible que la clave que intenta ingresar ya esté registrada.";
 		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);
-	} 
+	}
 	else {
 		$error = "Indefinido.";
 		header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);

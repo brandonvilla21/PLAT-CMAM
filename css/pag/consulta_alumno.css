@@ -10,13 +10,18 @@
 }
 
 #div_foto {
-  display: flex;
   align-items: center;
 }
 
-#div_foto img {
+#div_foto img{
   width: 18rem;
+  padding-left: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
 #div_no_encontrado {
   display: flex;
   justify-content: center;
