@@ -206,3 +206,31 @@ function consultaPagos() {
 		});
 	}
 }
+
+function actualizarPago(saldo_acredor, id_estado_cuenta) {
+	var abono				 = document.getElementById('abono').value;
+
+	$.ajax({
+		type : "POST",
+		url : "../../php/querys/actualiza_pago.php",
+		data : {
+			'id_estado_cuenta' : id_estado_cuenta,
+			'abono'			 			 : abono
+
+		},
+		success : function(response) {
+		 var json = JSON.parse(response);
+		 if(json['respuesta'] == true){
+			var mensaje= 'Se realizo el abono correctamente!'
+			window.location = '../../html/pag/operacion_exitosa.php?mensaje='+mensaje;
+
+		 } else {
+			window.location = '../../html/pag/alumno_registro_incorrecto.php';
+		 }
+		 },
+			error : function(xhr, ajaxOptions, thrownError) {
+			 alert("Error: "+ xhr.status);
+			 alert(thrownError);
+		 }
+	});
+}
