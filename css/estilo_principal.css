@@ -237,6 +237,11 @@
 	font-family: muli_regular, sans-serif;
 
 }
+
+#div_datos_adeudo {
+	font-family: muli_regular;
+}
+
 .label_frm {
 	color: #fff;
 	font-family: muli_regular;
