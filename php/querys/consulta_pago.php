@@ -56,9 +56,7 @@
     			  	<?php
     			  		$result = getEstadoCuenta($id_alumno, $conexion, $query);
     				  	imprimirEstadoCuenta($result);
-                //Se agregara un id_estado_cuenta
-                // para que ese sea el id que se pasara por parametro para consultar
-                //un solo pago al momento de darle click en DEBE
+
     		  		?>
     			</table>
         </div>

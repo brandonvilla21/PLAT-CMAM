@@ -35,11 +35,28 @@
 	  	return $result;
 	}
 
-	function getEstadoCuenta($id_alumno, $conexion, $query){
-		//Retorna un arreglo de tbl_arresto
+	function imprimirHistorialArresto($result){
+		while($row = mysqli_fetch_array($result)) {
+			echo '<tr>';
+				echo '<td>'. $row['id_arresto'] .'</td>';
+				echo '<td>'. $row['motivo'] .'</td>';
+				echo '<td>'. $row['fecha'] .'</td>';
+				echo '<td>'. $row['horas'] .'</td>';
+				echo '<td>'. $row['puntos'] .'</td>';
+				echo '<td ';
+				if($row['estado'] == 'DEBIDO'){
+					 echo ' style="background-color: #fdbab3 ;" ';
+				}
+				echo '>' . $row['estado'] . '</td>';
+			echo '</tr>';
+		}
+	}
+
+ 	function getEstadoCuenta($id_alumno, $conexion, $query){
 	  $result = mysqli_query($conexion, $query);
   	return $result;
 	}
+
 	function imprimirEstadoCuenta($result){
 		while($row = mysqli_fetch_array($result)) {
 			$debe  						= $row['saldo_deudor'];
@@ -60,24 +77,6 @@
 				}
 			echo '</tr>';
 		}
-
-	}
-	function imprimirHistorialArresto($result){
-		while($row = mysqli_fetch_array($result)) {
-			echo '<tr>';
-				echo '<td>'. $row['id_arresto'] .'</td>';
-				echo '<td>'. $row['motivo'] .'</td>';
-				echo '<td>'. $row['fecha'] .'</td>';
-				echo '<td>'. $row['horas'] .'</td>';
-				echo '<td>'. $row['puntos'] .'</td>';
-				echo '<td ';
-				if($row['estado'] == 'DEBIDO'){
-					 echo ' style="background-color: #fdbab3 ;" ';
-				}
-				echo '>' . $row['estado'] . '</td>';
-			echo '</tr>';
-		}
-
 	}
 
 
