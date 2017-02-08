@@ -237,13 +237,35 @@
           <!-- Checar lo de tutor en altas -->
         </select>
         <br />
-        <label class="label_frm">Foto: </label>
-        <input type="file" name="foto" class="input_file_frm" id="foto" accept=".png, .jpeg, .jpg" style="color:#FFF">
-        <br />
         <label class="label_frm">Alergias (descripción): </label>
         <br />
         <input class="input_frm"  type="text"  maxlength="25" rows="3" style="width: 500px; height: 60px" name="input_alergia" value="<?php echo $alergia?>">
-        <!-- <input class="input_frm"  type="text" name="alergia" form="frm_registrar_alumno" rows="3"  maxlength="25"  style="width: 500px; height: 60px"> -->
+        <br /><br />
+        <div id="div_foto_etiquetas">
+          <label class="label_frm">Foto:</label><br/><hr />
+        </div>
+        <section class="galeria">
+          <div>
+            <label class="label_foto">Actual: </label><br/>
+          <?php
+            if ($foto != "NULL.jpg") {
+              $image_path = "../../img/foto/".$foto;
+            ?>
+            <img src="<?php echo $image_path?>" alt="imagen">
+            <?php } else { ?>
+              <img src="../../img/logo_cmam_1000x1000.png" alt="imagen">
+              <p class="label_foto">El alumno no tiene asociada una foto. (Imagen por defecto)</p>
+            <?php  }?>
+          </div>
+
+          <div id="div_foto_nueva">
+            <label class="label_foto">Nueva: </label><br/>
+            <img src="../../img/logo_cmam_1000x1000.png"><!-- Imagen provisional -->
+          </div>
+        </section>
+        <label class="label_frm">Seleccionar foto (MAX: 500 kbs): </label>
+        <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg"/>
+        <hr/>
         <br /><br />
 
 
