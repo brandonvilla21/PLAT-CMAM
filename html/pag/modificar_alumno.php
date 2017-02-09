@@ -34,7 +34,7 @@
 			<div id="div_cuerpo">
 				<!-- Lo escencial de la pagina: -->
 				<h1>Modificación de datos de alumno</h1><br/>
-        <form name="frm_modificar_alumno" >
+        <form name="frm_modificar_alumno" enctype="multipart/form-data">
 
           <label class="label_frm">Número de control:</label>
           <input name="id_alumno" id="id_alumno" type="text" class="input_frm" maxlength="9" required>

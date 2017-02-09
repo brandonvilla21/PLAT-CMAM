@@ -1,9 +1,52 @@
 <?php
 	header("Content-Type: text/html;charset=utf-8");
 	include("../conexion_db_cmam.php");
+	include("functions_alumno.php");
+
 	/*Seleciona la base de datos a utilizar*/
 	mysqli_select_db($conexion, $base_de_datos)
 		or die("Ha fallado la conexion con la base de datos");
+
+		if($_FILES['foto']['name'] == ''){
+			echo "no se seleccionó ningun archivo.";
+
+		}
+		else {
+
+			//Direccion donde se guardarán las fotos:
+			$carpeta_fotos = "../../img/foto/";
+
+			//Obtener la extension del archivo.
+			$extension = explode("/", $_FILES['foto']['type'])[1];
+
+			//Se establece el tipo de imagen para poder identificar la extensión de la imagen.
+			// $extension = $_FILES['foto']['type'];
+			// switch ($extension) {
+			// 	case "image/jpg":		$extension = "jpg"; 	break;
+			// 	case "image/jpeg": 	$extension = "jpg"; 	break;
+			// 	case "image/png":  	$extension = "png"; 	break;
+			// }
+
+			//Nombre que tendrá la foto = id_alumno + extensión. Ejemplo: AS0117000.jpg
+			$nombre_foto = mb_strtoupper($_REQUEST['id_alum'],'utf-8') . ".". $extension;
+
+			//Guarda el archivo en una variable
+			$archivo = $_FILES['foto']['tmp_name'];
+
+			//------------Eliminar antiguo archivo-----------------------------
+			//Ruta de archivo anterior.
+			$ruta_foto_anterior = $carpeta_fotos . getFoto(mb_strtoupper($_REQUEST['id_alum'],'utf-8'), $conexion);
+
+			//Elimina el archivo anterior
+			unlink($ruta_foto_anterior);
+			//-----------------------------------------------------------------
+
+
+			//------------Copiar nuevo archivo al servidor-----------------------------
+			//Copiar el archivo en la dirección:
+			copy($archivo, $carpeta_fotos . $nombre_foto);
+
+		}
 
 	/*Variables que obtienen los datos del formulario*/
   $id_alumno 							= mb_strtoupper($_REQUEST['id_alum'],'utf-8');
@@ -32,7 +75,7 @@
 	$alergia 							  = mb_strtoupper($_REQUEST['input_alergia'],'utf-8');
 	$tipo_sangre	   			  = $_REQUEST['tipo_sangre'];
 	$estatus 				 			  = mb_strtoupper($_REQUEST['estatus'],'utf-8');
-	$foto 					 			  = $_REQUEST['foto'];
+	$foto 					 			  = $nombre_foto;
 	$rango								  = mb_strtoupper($_REQUEST['rango'],'utf-8');
 	$modalidad 			  			= mb_strtoupper($_REQUEST['modalidad'],'utf-8');
 	$padre_apellido_paterno = mb_strtoupper($_REQUEST['padre_apellido_paterno'],'utf-8');

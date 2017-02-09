@@ -43,7 +43,7 @@
             	$alergia 							  = $row['alergia'];
             	$tipo_sangre	   			  = $row['tipo_sangre'];
             	$estatus 				 			  = $row['estatus'];
-            	$foto 					 			  = $row['foto'];
+            	$foto 			            = $row['foto'];
             	$rango								  = $row['rango'];
             	$modalidad 			  			= $row['modalidad'];
             	$padre_apellido_paterno = $row['padre_apellido_paterno'];
@@ -86,7 +86,7 @@
 	    if (isset($nombre)) {
 	    ?>
 			<h2 id="encontrado_h2" class="label_frm">Datos generales del alumno</h2><hr>
-      <form  method="post" action="../../php/querys/modificacion_alumno.php" name="frm_registrar_alumno">
+      <form  method="post" action="../../php/querys/modificacion_alumno.php" name="frm_modifica_alumno" enctype="multipart/form-data">
 
 
         <!-- DATOS DE NUEVO INGRESO ----------------------------------------------------->
@@ -237,14 +237,32 @@
           <!-- Checar lo de tutor en altas -->
         </select>
         <br />
-        <label class="label_frm">Foto: </label>
-        <input type="file" name="foto" class="input_file_frm" id="foto" accept=".png, .jpeg, .jpg" style="color:#FFF">
-        <br />
         <label class="label_frm">Alergias (descripción): </label>
         <br />
         <input class="input_frm"  type="text"  maxlength="25" rows="3" style="width: 500px; height: 60px" name="input_alergia" value="<?php echo $alergia?>">
-        <!-- <input class="input_frm"  type="text" name="alergia" form="frm_registrar_alumno" rows="3"  maxlength="25"  style="width: 500px; height: 60px"> -->
         <br /><br />
+        <div id="div_foto_etiquetas">
+          <label class="label_frm">Foto:</label><br/><hr />
+        </div>
+        <div class="galeria">
+          <div>
+          <?php
+            if ($foto != "NULL.jpg") {
+              $image_path = "../../img/foto/".$foto;
+            ?>
+            <img class="image" src="<?php echo $image_path?>" alt="imagen"><br/>
+            <?php } else { ?>
+              <img class="image" src="../../img/default_image.png" alt="imagen"><br/>
+            <?php  }?>
+            <!-- <input id="foto" form="frm_modifica_alumno" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/> -->
+            <label class="label_frm">Seleccionar nueva foto (MAX: 500 kbs): </label>
+            <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/>
+          </div>
+        </div>
+        <hr/>
+
+        <br /><br />
+
 
 
         <!-- DATOS DE CONTROL----------------------------------------------------->

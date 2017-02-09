@@ -97,6 +97,19 @@ function generarCurp(apellido_paterno, apellido_materno, nombre, fecha_nacimient
 function getEdad() {
 
 }
+function cargarImagen(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.image').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 function consultaAlumno() {
 	//Obtiene el id del alumno y lo almacena en una variable
 	var id_alumno = document.getElementById("id_alumno").value;
