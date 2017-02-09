@@ -10,6 +10,12 @@
 		return $row['nombre'];
 	}
 
+	function getFoto($id_alumno, $conexion){
+		$sql = "SELECT foto FROM tbl_alumno WHERE id_alumno = '$id_alumno'";
+		$result = mysqli_query($conexion, $sql);
+		$row = mysqli_fetch_array($result);
+		return $row['foto'];
+	}
 
 	function getHorasArresto($id_alumno, $conexion){
 		$sql = "SELECT horas_arresto FROM tbl_alumno WHERE id_alumno = '$id_alumno'";

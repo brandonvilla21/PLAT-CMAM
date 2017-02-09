@@ -1,4 +1,4 @@
-section.galeria {
+div.galeria {
    border: 1px solid white;
    border-radius: 5px;
    padding: .5vw;
@@ -14,7 +14,7 @@ section.galeria {
    text-align: center;
 }
 
-section.galeria div {
+div.galeria div {
    -webkit-box-flex: auto;
    -ms-flex: auto;
    flex: auto;
@@ -22,15 +22,8 @@ section.galeria div {
    margin: .5vw;
 }
 
-.label_foto{
-  color: #fff;
-	font-family: muli_regular;
-	font-size: 18px;
-  text-align:center;
-  margin: 0 auto;
-
-}
-
-section.galeria div img {
+.image{
    width: 14rem;
+   padding-bottom: 0.5rem;
+   border-radius: 5px;
 }

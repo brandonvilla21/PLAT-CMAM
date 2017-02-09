@@ -43,7 +43,7 @@
             	$alergia 							  = $row['alergia'];
             	$tipo_sangre	   			  = $row['tipo_sangre'];
             	$estatus 				 			  = $row['estatus'];
-            	$foto 					 			  = $row['foto'];
+            	$foto 			            = $row['foto'];
             	$rango								  = $row['rango'];
             	$modalidad 			  			= $row['modalidad'];
             	$padre_apellido_paterno = $row['padre_apellido_paterno'];
@@ -86,7 +86,7 @@
 	    if (isset($nombre)) {
 	    ?>
 			<h2 id="encontrado_h2" class="label_frm">Datos generales del alumno</h2><hr>
-      <form  method="post" action="../../php/querys/modificacion_alumno.php" name="frm_registrar_alumno">
+      <form  method="post" action="../../php/querys/modificacion_alumno.php" name="frm_modifica_alumno" enctype="multipart/form-data">
 
 
         <!-- DATOS DE NUEVO INGRESO ----------------------------------------------------->
@@ -244,29 +244,25 @@
         <div id="div_foto_etiquetas">
           <label class="label_frm">Foto:</label><br/><hr />
         </div>
-        <section class="galeria">
+        <div class="galeria">
           <div>
-            <label class="label_foto">Actual: </label><br/>
           <?php
             if ($foto != "NULL.jpg") {
               $image_path = "../../img/foto/".$foto;
             ?>
-            <img src="<?php echo $image_path?>" alt="imagen">
+            <img class="image" src="<?php echo $image_path?>" alt="imagen"><br/>
             <?php } else { ?>
-              <img src="../../img/logo_cmam_1000x1000.png" alt="imagen">
-              <p class="label_foto">El alumno no tiene asociada una foto. (Imagen por defecto)</p>
+              <img class="image" src="../../img/default_image.png" alt="imagen"><br/>
             <?php  }?>
+            <!-- <input id="foto" form="frm_modifica_alumno" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/> -->
+            <label class="label_frm">Seleccionar nueva foto (MAX: 500 kbs): </label>
+            <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/>
           </div>
-
-          <div id="div_foto_nueva">
-            <label class="label_foto">Nueva: </label><br/>
-            <img src="../../img/logo_cmam_1000x1000.png"><!-- Imagen provisional -->
-          </div>
-        </section>
-        <label class="label_frm">Seleccionar foto (MAX: 500 kbs): </label>
-        <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg"/>
+        </div>
         <hr/>
+
         <br /><br />
+
 
 
         <!-- DATOS DE CONTROL----------------------------------------------------->
