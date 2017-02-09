@@ -14,7 +14,7 @@
 	$horas			= $_REQUEST['horas'];
 	$puntos			= $_REQUEST['puntos'];
 	$estado 		= "DEBIDO";
-	
+
 
 	$query =
 	"INSERT INTO `tbl_arresto`
@@ -22,8 +22,8 @@
 		`id_alumno`,
 		`motivo`,
 		`fecha`,
-		`horas`, 
-		`puntos`, 
+		`horas`,
+		`puntos`,
 		`estado`
 	) VALUES (
 		'$id_alumno',
@@ -81,27 +81,27 @@
 
 
 
-	
-		
+
+
 	$status = mysqli_sqlstate ($conexion);
 
 
-	
+
 
 	$error = '<br>' . "Todo bien :)";
 
 	//Código de status: 00000: La ultima consulta fué realizada con exito.
 	if($status == '00000'){
 		//header('Location: ../../html/pag/operacion_correcta.php');
-	} 
+	}
 
-	/* Código de status: Cuando el codigo es 23000, eprobable que 
+	/* Código de status: Cuando el codigo es 23000, eprobable que
 	 * se esté duplicando un campo llave al ejecutar la query.
 	 */
 	else if($status == '23000'){
 		$error = "Es posible que la clave que intenta ingresar ya esté registrada.";
 		//header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);
-	} 
+	}
 	else {
 		$error = "Indefinido.";
 		//header('Location: ../../html/pag/alumno_registro_incorrecto.php?error='.$error."&status=".$status);

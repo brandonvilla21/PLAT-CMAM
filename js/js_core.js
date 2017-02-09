@@ -94,7 +94,9 @@ function generarCurp(apellido_paterno, apellido_materno, nombre, fecha_nacimient
 	// Enviarla al elemento especificado
 	setValue(id_elemento, curp.toUpperCase());
 }
+function getEdad() {
 
+}
 function consultaAlumno() {
 	//Obtiene el id del alumno y lo almacena en una variable
 	var id_alumno = document.getElementById("id_alumno").value;

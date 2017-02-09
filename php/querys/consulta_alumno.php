@@ -47,7 +47,7 @@
 					<div id="datos_personales">
 						<p class="dato_alumno_nombre"><?php echo $nombre . " " . $apellido_paterno . " " . $apellido_materno ?></p>
 						<p class="dato_alumno">Rango: <?php echo $rango ?></p>
-						<p class="dato_alumno">Edad: x años	</p>
+						<p id="edad_alumno"class="dato_alumno">	Edad : X</p>
 						<p class="dato_alumno">Fecha de nacimiento: <?php echo $fecha_nacimiento ?></p>
 						<p class="dato_alumno">Sexo: <?php echo $sexo ?></p>
 						<p class="dato_alumno">Direccion: <?php echo $calle . ", COLONIA ". $colonia ?></p>
