@@ -9,7 +9,7 @@
 
 		if($_FILES['foto']['name'] == ''){
 			echo "no se seleccionó ningun archivo.";
-
+			$foto = getFoto(mb_strtoupper($_REQUEST['id_alum'],'utf-8'), $conexion);
 		}
 		else {
 
@@ -46,6 +46,8 @@
 			//Copiar el archivo en la dirección:
 			copy($archivo, $carpeta_fotos . $nombre_foto);
 
+			$foto = $nombre_foto;
+
 		}
 
 	/*Variables que obtienen los datos del formulario*/
@@ -75,7 +77,6 @@
 	$alergia 							  = mb_strtoupper($_REQUEST['input_alergia'],'utf-8');
 	$tipo_sangre	   			  = $_REQUEST['tipo_sangre'];
 	$estatus 				 			  = mb_strtoupper($_REQUEST['estatus'],'utf-8');
-	$foto 					 			  = $nombre_foto;
 	$rango								  = mb_strtoupper($_REQUEST['rango'],'utf-8');
 	$modalidad 			  			= mb_strtoupper($_REQUEST['modalidad'],'utf-8');
 	$padre_apellido_paterno = mb_strtoupper($_REQUEST['padre_apellido_paterno'],'utf-8');
