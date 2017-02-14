@@ -46,13 +46,21 @@
 						<p class="dato_personal">Correo: <?php echo $correo ?></p>
 					</div>
 					<div id="div_foto">
-						<img src="../../img/itcg_logo.jpg" >
+						<?php
+					    if ($foto != "NULL.jpg") {
+								$image_path = "../../img/foto/".$foto;
+					    ?>
+							<img src="<?php echo $image_path?>">
+							<?php } else { ?>
+								<img src="../../img/default_image.png">
+								<p class="dato_personal">No tiene asociada una foto.</p>
+							<?php  }?>
 					</div>
 			</div>
 
 	    <?php } else { ?>
 					<div id="div_no_encontrado">
-						<h2>No se encontro al personal</h2>
+						<h2>No se encontró al personal</h2>
 					</div>
 	    <?php  }?>
 </div>

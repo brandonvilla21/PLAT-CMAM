@@ -82,11 +82,10 @@
 	$resultado = mysqli_query($conexion, $query)
 
 	//Si falla (or die), redirecciona a la pagina de fallo.
-		or die ();
-		//or die (header('Location: ../../html/pag/personal_registro_incorrecto.php'));
+		or die (header('Location: ../../html/pag/personal_registro_incorrecto.php'));
 				// or die ("No se pudo ejecutar el query " .mysqli_error($conexion) );
 
 		//Si no falla, redirecciona a la pagina de registro correcto.
-		//header('Location: ../../html/pag/personal_registro_correcto.php');
+		header('Location: ../../html/pag/personal_registro_correcto.php');
 
 ?>

@@ -64,7 +64,7 @@
 					    ?>
 							<img src="<?php echo $image_path?>">
 							<?php } else { ?>
-								<img src="../../img/logo_cmam_1000x1000.png">
+								<img src="../../img/default_image.png">
 								<p class="dato_alumno">El alumno no tiene asociada una foto.</p>
 							<?php  }?>
 					</div>
