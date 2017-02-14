@@ -32,7 +32,7 @@
 	    if (isset($nombre)) {
 	    ?>
 			<h2 id="encontrado_h2" class="label_frm">Datos del personal</h2><hr>
-      <form  method="post" action="../../php/querys/modificacion_personal.php" name="frm_registrar_personal">
+      <form  method="post" enctype="multipart/form-data" action="../../php/querys/modificacion_personal.php" name="frm_registrar_personal">
         <div id="div_contenedor_formulario">
           <div  id="div_labels">
               <label class="label_frm">Número de control: </label>
@@ -43,7 +43,6 @@
               <label class="label_frm" >Numero de telefono: </label>
               <label class="label_frm" >Numero de celular: </label>
               <label class="label_frm" >Correo: </label>
-              <label class="label_frm" >Foto: </label>
 
           </div>
           <div id="div_boxes">
@@ -65,9 +64,24 @@
               <input id="numero_telefono" class="input_frm"  type="text"  maxlength="30" name="numero_telefono" required value="<?php echo $numero_telefono ?>">
               <input id="numero_celular" class="input_frm"  type="text"  maxlength="30" name="numero_celular" required value="<?php echo $numero_celular ?>">
               <input id="correo" class="input_frm_correo"  type="text"  maxlength="30" name="correo" required value="<?php echo $correo ?>">
-              <input type="file" name="foto" class="input_file_frm" id="foto" accept=".png, .jpeg, .jpg" style="color:#FFF">
-
-
+          </div>
+        </div>
+        <div id="div_foto_etiquetas">
+          <label class="label_frm">Foto:</label><br/><hr />
+        </div>
+        <div class="galeria">
+          <div>
+          <?php
+            if ($foto != "NULL.jpg") {
+              $image_path = "../../img/foto/".$foto;
+            ?>
+            <img class="image" src="<?php echo $image_path?>" alt="imagen"><br/>
+            <?php } else { ?>
+              <img class="image" src="../../img/default_image.png" alt="imagen"><br/>
+            <?php  }?>
+            <!-- <input id="foto" form="frm_modifica_alumno" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/> -->
+            <label class="label_frm">Seleccionar nueva foto (MAX: 500 kbs): </label>
+            <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/>
           </div>
         </div>
         <div id="div_btn_frm_aceptar">
