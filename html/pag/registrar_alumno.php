@@ -228,9 +228,17 @@
 							<option value="O">Otro</option>
 						</select>
 						<br />
-						<label class="label_frm">Foto (MAX: 500 kbs): </label>
-  					<input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg"/>
-						<br />
+						<div id="div_foto_etiquetas">
+		          <label class="label_frm">Foto:</label><br/><hr />
+		        </div>
+		        <div class="galeria">
+		          <div>
+		          	<img class="image" src=""><br/>
+		            <label class="label_frm">Seleccionar nueva foto (MAX: 500 kbs): </label>
+		            <input id="foto" name="foto" size="30" type="file" accept=".png, .jpeg, .jpg" onchange="cargarImagen(this)"/>
+		          </div>
+		        </div>
+						<hr>
 						<label class="label_frm">Alergias (descripción): </label>
 						<br />
 						<textarea class="input_frm" form="frm_registrar_alumno" id="input_alergia" name ="input_alergia" maxlength="50" style="width: 500px; height: 60px"> </textarea>
